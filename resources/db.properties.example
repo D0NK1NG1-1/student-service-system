@@ -1,0 +1,33 @@
+# ============================
+# 数据库连接配置 · 模板文件
+# ============================
+# 使用说明:
+#   1) 把本文件复制一份, 重命名为 db.properties (同目录)
+#   2) 把 jdbc.password 改成你本机 MySQL 的 root 密码
+#   3) 如果数据库还没建, 先在 MySQL 里执行 resources/schema.sql
+#
+# ⚠️ db.properties 已被 .gitignore 排除, 不要把它提交到仓库 (里面有密码和 API Key)
+
+jdbc.driver=com.mysql.cj.jdbc.Driver
+jdbc.url=jdbc:mysql://localhost:3306/student_cs_db?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai&useSSL=false&allowPublicKeyRetrieval=true
+jdbc.username=root
+jdbc.password=你的MySQL密码
+
+# ============================
+# LLM / AI 接口配置
+# ============================
+# 任意 OpenAI 兼容接口都行: 阿里云百炼(千问) / DeepSeek / 智谱 等
+# 下面以阿里云百炼为例
+llm.provider=aliyun-qwen
+llm.api.url=https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions
+llm.api.key=sk-你的APIKey
+llm.model=qwen-plus
+
+# 情感分析 LLM (可以和问答共用同一个 key)
+sentiment.api.url=https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions
+sentiment.api.key=sk-你的APIKey
+sentiment.model=qwen-plus
+
+# HTTP 超时 (毫秒)
+http.connect.timeout=5000
+http.read.timeout=15000

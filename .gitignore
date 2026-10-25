@@ -1,0 +1,51 @@
+### ========== 敏感配置 (绝对不要提交) ==========
+# 里面有本机 MySQL 密码和真实 LLM API Key
+resources/db.properties
+# 但保留模板, 方便别人 clone 后照着填
+!resources/db.properties.example
+# 自检用的本地覆盖配置 (也含本机数据库密码)
+dselftest/dselftest_mockconf/db.properties
+
+### ========== 工具/编辑器本地数据 ==========
+.workbuddy/
+
+### ========== 构建产物 ==========
+out/
+build/
+target/
+*.class
+
+### ========== IntelliJ IDEA ==========
+.idea/
+*.iml
+*.ipr
+*.iws
+.kotlin
+
+### ========== Eclipse / NetBeans / VS Code ==========
+.classpath
+.project
+.settings/
+.apt_generated
+.factorypath
+.springBeans
+.sts4-cache
+bin/
+nbproject/private/
+nbbuild/
+dist/
+.vscode/
+
+### ========== 本地临时文件 ==========
+# PBL 平台导出的临时文件
+__pbl_raw.xml
+__pbl_text.txt
+__pbl.zip
+__pbl_unzipped/
+# 自检截图 / 临时字节码
+dselftest/shots/
+dselftest/out/
+# 系统文件
+.DS_Store
+Thumbs.db
+*.log
